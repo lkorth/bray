@@ -2,7 +2,7 @@ import clients
 import configuration
 
 def store(directory_hash, files):
-    collection = clients.chroma.create_collection(name=directory_hash)
+    collection = clients.chroma.get_or_create_collection(name=directory_hash)
 
     for i, file in enumerate(files):
         for i2, d in enumerate(file):
