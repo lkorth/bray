@@ -30,14 +30,14 @@ docker exec -it ollama ollama pull nomic-embed-text
 docker exec -it ollama ollama pull llama3.2:1b
 ```
 
-Create embeddings for markdown files
+Create embeddings for markdown files in the current directory
 
 ```bash
-python3 src/bray/bray.py load
+python3 PATH_TO_BRAY/src/bray/bray.py load
 ```
 
-Execute a prompt utilizing embeddings
+Execute a prompt utilizing embeddings for markdown files in the current directory
 
 ```bash
-python3 src/bray/bray.py retrieve
+python3 PATH_TO_BRAY/src/bray/bray.py retrieve
 ```
