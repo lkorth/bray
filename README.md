@@ -30,6 +30,12 @@ docker exec -it ollama ollama pull nomic-embed-text
 docker exec -it ollama ollama pull llama3.2:1b
 ```
 
+Install dependencies
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
 Create embeddings for markdown files in the current directory
 
 ```bash
