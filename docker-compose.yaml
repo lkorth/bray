@@ -1,0 +1,20 @@
+services:
+  chroma:
+    container_name: chroma
+    hostname: chroma
+    image: chromadb/chroma:0.5.18
+    ports:
+      - 8000:8000
+    volumes:
+      - ./volumes/chroma:/chroma/chroma
+    environment:
+      IS_PERSISTENT: TRUE
+      ANONYMIZED_TELEMETRY: FALSE
+  ollama:
+    container_name: ollama
+    hostname: ollama
+    image: ollama/ollama
+    ports:
+      - 11434:11434
+    volumes:
+      - ./volumes/ollama:/root/.ollama
