@@ -30,6 +30,13 @@ docker exec -it ollama ollama pull nomic-embed-text
 docker exec -it ollama ollama pull llama3.2:1b
 ```
 
+Setup your Python environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
 Install dependencies
 
 ```bash
