@@ -1,5 +1,8 @@
 import clients
 import configuration
+import logging
+
+logger = logging.getLogger(__name__)
 
 def retrieve(directory_hash, prompt):
     embedding_response = clients.ollama.embeddings(prompt=prompt, model=configuration.EMBEDDING_MODEL)
@@ -10,9 +13,9 @@ def retrieve(directory_hash, prompt):
     return results['documents'][0][0]
 
 def generate_with_context(data, prompt):
-    output = clients.ollama.generate(
-        model=configuration.LLM_MODEL,
-        prompt=f"Using this data: {data}. Respond to this prompt: {prompt}"
-    )
+    full_prompt = f"Using this data: {data}. Respond to this prompt: {prompt}"
+    logger.info(full_prompt)
+
+    output = clients.ollama.generate(model=configuration.LLM_MODEL, prompt=full_prompt)
 
     return output['response']
